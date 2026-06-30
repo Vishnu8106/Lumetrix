@@ -1,0 +1,213 @@
+@import "tailwindcss";
+
+/* Enable class-based dark mode for Tailwind v4 dark: variants */
+@custom-variant dark (&:where(.dark, .dark *));
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #f5f7ff;
+    color: #1f2937;
+    -webkit-font-smoothing: antialiased;
+  }
+  #root {
+    width: 100%;
+    max-width: 100%;
+    text-align: left;
+  }
+  * { box-sizing: border-box; }
+}
+
+@layer utilities {
+  .gradient-text {
+    background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  .gradient-bg {
+    background: linear-gradient(135deg, #1e40af, #7c3aed);
+  }
+  .gradient-bg-dark {
+    background: linear-gradient(135deg, #1e3a8a, #4c1d95);
+  }
+  .glass {
+    backdrop-filter: blur(16px);
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+  }
+  .bg-soft {
+    background: linear-gradient(160deg, #ffffff 0%, #f8f9ff 100%);
+  }
+  .bg-soft-alt {
+    background: linear-gradient(160deg, #eff4ff 0%, #f3eeff 100%);
+  }
+  .card-shadow {
+    box-shadow: 0 8px 32px rgba(59, 130, 246, 0.12);
+  }
+  .text-shadow {
+    text-shadow: 0 2px 20px rgba(0,0,0,0.6);
+  }
+}
+
+/* Swiper custom */
+.swiper-pagination-bullet {
+  background: white !important;
+  opacity: 0.6 !important;
+  width: 10px !important;
+  height: 10px !important;
+}
+.swiper-pagination-bullet-active {
+  opacity: 1 !important;
+  background: #3b82f6 !important;
+  width: 30px !important;
+  border-radius: 5px !important;
+  transition: width 0.3s ease !important;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: #f1f5f9; }
+::-webkit-scrollbar-thumb { background: linear-gradient(#3b82f6, #8b5cf6); border-radius: 3px; }
+
+/* Float animation */
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-12px); }
+}
+.float-anim { animation: float 3s ease-in-out infinite; }
+
+/* Pulse ring */
+@keyframes pulse-ring {
+  0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(59,130,246,0.4); }
+  70% { transform: scale(1); box-shadow: 0 0 0 20px rgba(59,130,246,0); }
+  100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(59,130,246,0); }
+}
+.pulse-ring { animation: pulse-ring 2s ease-in-out infinite; }
+
+/* Gradient border card */
+.gradient-border {
+  border: 2px solid transparent;
+  background-clip: padding-box;
+  position: relative;
+}
+.gradient-border::before {
+  content: '';
+  position: absolute;
+  inset: -2px;
+  border-radius: inherit;
+  background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+  z-index: -1;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+.gradient-border:hover::before { opacity: 1; }
+
+/* Shimmer loading */
+@keyframes shimmer {
+  0% { background-position: -200% center; }
+  100% { background-position: 200% center; }
+}
+.shimmer {
+  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+}
+
+/* Scroll indicator */
+@keyframes scroll-bounce {
+  0%, 100% { transform: translateY(0); opacity: 1; }
+  50% { transform: translateY(8px); opacity: 0.5; }
+}
+.scroll-bounce { animation: scroll-bounce 1.5s ease-in-out infinite; }
+
+/* ─── Dark Mode ────────────────────────────────────────────────────────────── */
+/* Deep navy-blue palette — positive, trustworthy, premium feel               */
+
+html.dark {
+  color-scheme: dark;
+}
+
+html.dark body {
+  background: #0c1428;
+  color: #eef0ff;
+}
+
+/* Section backgrounds */
+html.dark .bg-soft {
+  background: linear-gradient(160deg, #111d3c 0%, #0c1428 100%) !important;
+}
+
+html.dark .bg-soft-alt {
+  background: linear-gradient(160deg, #141f40 0%, #101633 100%) !important;
+}
+
+/* Card / panel backgrounds */
+html.dark .bg-white {
+  background-color: #172244 !important;
+}
+
+html.dark .bg-gray-50 {
+  background-color: #1c2b52 !important;
+}
+
+html.dark .bg-white\/50 { background-color: rgba(23, 34, 68, 0.5) !important; }
+html.dark .bg-white\/80 { background-color: rgba(23, 34, 68, 0.8) !important; }
+html.dark .bg-white\/90 { background-color: rgba(23, 34, 68, 0.9) !important; }
+html.dark .bg-white\/95 { background-color: rgba(23, 34, 68, 0.97) !important; }
+html.dark .bg-white\/98 { background-color: rgba(18, 27, 54, 0.98) !important; }
+
+/* Text colors — light blues for positivity */
+html.dark .text-gray-900 { color: #eef0ff !important; }
+html.dark .text-gray-800 { color: #dde3ff !important; }
+html.dark .text-gray-700 { color: #b4c5ef !important; }
+html.dark .text-gray-600 { color: #8aa3d8 !important; }
+html.dark .text-gray-500 { color: #6d8ec4 !important; }
+html.dark .text-gray-400 { color: #4e6a9e !important; }
+
+/* Borders */
+html.dark .border-gray-100 { border-color: rgba(100, 140, 255, 0.10) !important; }
+html.dark .border-gray-200 { border-color: rgba(100, 140, 255, 0.14) !important; }
+html.dark .border-gray-800 { border-color: rgba(100, 140, 255, 0.12) !important; }
+
+/* Icon container gradients (blue-50 → purple-50) */
+html.dark .from-blue-50 {
+  --tw-gradient-from: rgba(29, 56, 140, 0.45) !important;
+  --tw-gradient-from-position: 0% !important;
+}
+html.dark .to-purple-50 {
+  --tw-gradient-to: rgba(76, 29, 149, 0.45) !important;
+  --tw-gradient-to-position: 100% !important;
+}
+
+/* Glass & shadow utilities */
+html.dark .glass {
+  background: rgba(23, 34, 68, 0.5) !important;
+  border: 1px solid rgba(100, 140, 255, 0.12) !important;
+}
+
+html.dark .card-shadow {
+  box-shadow: 0 8px 32px rgba(30, 60, 200, 0.22) !important;
+}
+
+/* Scrollbar */
+html.dark ::-webkit-scrollbar-track { background: #0c1428; }
+html.dark ::-webkit-scrollbar-thumb {
+  background: linear-gradient(#3b82f6, #8b5cf6);
+  border-radius: 3px;
+}
+
+/* Shimmer in dark */
+html.dark .shimmer {
+  background: linear-gradient(90deg, #172244 25%, #1e2f5a 50%, #172244 75%);
+  background-size: 200% 100%;
+}
+
+/* Testimonial cards already use bg-gray-900 — brighten text slightly */
+html.dark .bg-gray-900 { background-color: #111d3c !important; }
+html.dark .bg-gray-950 { background-color: #0a1020 !important; }
