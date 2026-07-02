@@ -68,22 +68,22 @@ const Contact = () => {
                       {
                         icon: FiMail,
                         label: 'Email Us',
-                        value: 'vishnu123@mail',
+                        value: 'keerthireddy.aekkati@gmail.com',
                         sub: 'We respond within 2 hours',
                         color: 'from-blue-500 to-blue-700',
                       },
                       {
                         icon: FiPhone,
                         label: 'Call Us',
-                        value: '+91 8106658662',
+                        value: '+44 7443751597',
                         sub: 'Mon–Sat, 9am–7pm IST',
                         color: 'from-purple-500 to-purple-700',
                       },
                       {
                         icon: FiMapPin,
-                        label: 'Visit Us',
-                        value: 'KPHB, Hyderabad',
-                        sub: 'Telangana, 500083',
+                        label: 'Keerthi ',
+                        value: '3 Cadogan Place',
+                        sub: 'Preston PR13TB, United Kingdom',
                         color: 'from-green-500 to-green-700',
                       },
                     ].map((item) => (
