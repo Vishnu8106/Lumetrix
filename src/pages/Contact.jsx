@@ -5,6 +5,7 @@ import {
   FiLinkedin, FiFacebook, FiInstagram, FiTwitter
 } from 'react-icons/fi';
 import PageBanner from '../components/PageBanner';
+ 
 
 const FadeIn = ({ children, delay = 0, direction = 'up', className = '' }) => (
   <motion.div
