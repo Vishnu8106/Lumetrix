@@ -271,10 +271,10 @@ const Contact = () => {
                   <div className="w-16 h-16 rounded-full gradient-bg flex items-center justify-center mx-auto mb-4 float-anim">
                     <FiMapPin className="text-white" size={28} />
                   </div>
-                  <p className="font-bold text-gray-700 text-lg">KPHB, Hyderabad</p>
-                  <p className="text-gray-500">Telangana, 500083, India</p>
+                  <p className="font-bold text-gray-700 text-lg">3 Cadogan Place, Preston</p>
+                  <p className="text-gray-500">PR1 3TB, England, United Kingdom</p>
                   <a
-                    href="https://maps.google.com/?q=KPHB+Hyderabad+Telangana+500083"
+                    href="https://maps.google.com/?q=3+Cadogan+Place+Preston+PR1+3TB+United+Kingdom"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="mt-4 inline-flex items-center gap-2 px-5 py-2 rounded-full text-sm font-semibold text-white gradient-bg hover:opacity-90 transition-all"
