@@ -58,7 +58,6 @@ const Footer = () => {
               ))}
             </ul>
           </div>
-
           {/* Services */}
           <div>
             <h4 className="text-white font-semibold text-sm uppercase tracking-wider mb-4">Services</h4>
