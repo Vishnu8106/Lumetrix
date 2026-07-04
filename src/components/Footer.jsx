@@ -83,7 +83,6 @@ const Footer = () => {
               ))}
             </ul>
           </div>
-
           {/* Contact */}
           <div>
             <h4 className="text-white font-semibold text-sm uppercase tracking-wider mb-4">Contact Us</h4>
